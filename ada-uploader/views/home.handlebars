@@ -1,0 +1,89 @@
+<div class="container" role="main">
+
+	{{#if success}}
+	<h2>Your entries have been submitted. Thank you!</h2>
+	<a href="/">Click here to make another entry</a>
+	{{/if}}
+
+	{{#if error}}
+	<div class="error">{{error}}</div>
+	{{/if}}
+
+	{{#if showForm}}
+
+		<div class="row">
+			<div class="entry-master">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">Entry 1</h3>
+					</div>
+					
+					<div class="panel-body">
+
+						<p>Select category:
+							<select name="category" class="category" currentvalue="" id="category">
+							</select>
+						</p>
+
+						<script>
+							//if (!{{category}} === null) {
+								$('#category').val("{{category}}");
+							//}
+						</script>
+
+						<p>Name of entrant (individual or company):
+							<input value="{{entrant}}" name="entrant" placeholder="Name of entrant" id="entrant">
+						</p>
+
+						<p>Programme title:
+							<input value="{{progtitle}}" name="programmetitle" placeholder="Title of programme" id="progtitle">
+						</p>
+
+					</div>
+					
+					<div class="panel-body" id="ada-uploader"></div>
+
+				</div> <!--End of panel-->
+
+			</div> <!--End of entry-master-->
+		</div> <!-- end of row-->
+		
+		<h1>BBC Audio Drama Awards 2015</h1>
+		
+		<form action="/" method="post">
+
+		<div class="row contact">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Contact details</h3>
+				</div> <!-- End of panel heading --> 
+				
+				<div class="panel-body">
+					<p>Name of producer, executive or company making entry:
+						<input value="{{entrycontact}}" id="entrycontact" name="entrycontact" placeholder="Name of entrant">
+					</p>
+
+					<p>Email address:
+						<input value="{{email}}" id="title" name="title" type="email" placeholder="Email address">
+					</p>
+				</div> <!-- End of panel body -->
+			</div> <!-- End of panel -->
+		</div> <!-- End of row -->
+
+		<h3>Audio uploader</h3>
+		<div class="row entry">
+			<!-- Appended entry forms go here-->
+		</div>
+
+		<div class="row">
+			<button type="button" class="btn btn-success" id="add-entry"> + Add another entry</button>
+		</div>
+
+		<div class="row">
+			<button type="submit" class="btn btn-lg btn-primary" id="submit-entries">Submit all entries</button>
+		</div>
+
+	</form>
+	{{/if}}
+
+</div>

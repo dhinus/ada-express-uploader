@@ -1,0 +1,28 @@
+schema
+
+entry
+{
+	entrycontact : "Clive Brill",
+	email: "clive@brillproductions.co.uk",
+	category: "Best Actor",
+	entrant: "Damian Lewis",
+	programmetitle: "Number 10", 
+	fileupload: [
+		fileuuid : "53bc8dkdo2020nllndgsud",
+		fileuuid : "76r8gfso8ufwnrwouoijd3"
+	]
+}
+
+fileupload
+{
+	fileuuid :"53bc8dkdo2020nllndgsud",
+	filename : "The_shootist.mp3",
+	filesize : 65.4
+}
+
+
+
+
+what other data needs to be collected?
+filename for uploads attached to each entry (mp3 and script?)
+filesize of each upload to enable keeping track of total upload GB

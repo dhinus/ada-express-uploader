@@ -1,0 +1,16 @@
+.container {
+	width: 800px;
+}
+select {
+	width: 200px;
+}
+input {
+	width: 200px;
+}
+.qq-upload-button {
+	/*change color etc of UPLOAD BUTTON here*/
+}
+
+.entry-master {
+	display: none;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <title>{{title}}</title>
+
+		<!-- Bootstrap -->
+		<link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Bootstrap theme -->
+		<link href="stylesheets/bootstrap-theme.min.css" rel="stylesheet">
+
+		<!-- Custom theme -->
+		<link href="stylesheets/style.css" rel="stylesheet">
+
+	</head>
+
+	<body>
+		<script src="javascripts/jquery.js"></script>
+		<script src="javascripts/adau.js"></script>
+	    {{{body}}}
+
+		<script>
+			$(document).ready(function() {
+				ADAU.setupCategories();
+				ADAU.displayEntryForm();
+
+				// Update the category object, setting the first to "selected"
+				ADAU.categorySelected.bind($('.entry select'))()
+
+				//event handler for category select
+				$('.entry').on('change', 'select', ADAU.categorySelected);
+
+				//add another entry button
+				$('#add-entry').on('click', ADAU.displayEntryForm);
+
+				//submit entries button
+				$('#submit-entries').on('click', ADAU.addEntries);
+			});
+		</script>
+
+	</body>
+</html>
