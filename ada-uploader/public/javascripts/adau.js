@@ -105,7 +105,9 @@ var ADAU = {
         });
     },
 
-    addEntries: function() {
+    addEntries: function(event) {
+        event.preventDefault();
+
         //do validation
         console.log('Need to copy the validation function to client side');
 
@@ -122,14 +124,14 @@ var ADAU = {
             }
         }
         //entries.forEach(function(element) {
-            console.log('Entries data: ' + JSON.stringify(entries, null, 2));
+        console.log('Entries data: ' + JSON.stringify(entries, null, 2));
         //});
         //Use AJAX to post the object to our submitentry service
         $.ajax({
             type: 'POST',
-            data: entries,
+            data: { entries: JSON.stringify(entries) },
             url: '/submit/submitentries',
-            dataType: 'JSON'
+            dataType: 'json'
         }).done(function(response) {
             //Check for successful (blank) response
             if (response.msg === '') {
